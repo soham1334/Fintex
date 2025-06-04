@@ -27,7 +27,7 @@ function Registration (){
       }
 
       try{
-        const response = await axios.post("http://127.0.0.1:8000/API/v2/Register/",details)
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_KEY}/Register/`,details)
         console.log("Resgistered Successfully!",response.data)
         setregister(true)
       }catch(error:any){
