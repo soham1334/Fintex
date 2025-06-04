@@ -11,7 +11,7 @@ type Article = {
   title: string;
   description: string;
   url:string;
-  urlToImage: string;
+  image: string;
   smryvisible:boolean
 };
 
@@ -23,7 +23,7 @@ function News (){
    const[smryloading_url ,setsmryloading_url] = useState("")
    useEffect(() => {
         const Data = async() => {
-         let news_fetch  = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${import.meta.env.VITE_News_API_KEY_2}`);
+         let news_fetch  = await fetch(`https://gnews.io/api/v4/search?q=finance+business&lang=en&country=in&max=9&apikey=${import.meta.env.VITE_News_API_KEY_1}`);
          let news_data = await news_fetch.json()
           setData (news_data.articles); 
         }
@@ -85,7 +85,7 @@ function News (){
           <CARD
             key={news.url}
             title={news.title}
-            img_url={news.urlToImage}
+            img_url={news.image}
             description={news.description}
             src_url={news.url}
             onSummaryClick={() => ShowSummary(news.url)}
