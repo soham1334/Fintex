@@ -10,8 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 type Article = {
   title: string;
   description: string;
-  url:string;
-  image: string;
+  link:string;
+ image_url: string;
   smryvisible:boolean
 };
 
@@ -22,8 +22,8 @@ function News (){
    const [data ,setData] = useState<Article[]>([])
    const[smryloading_url ,setsmryloading_url] = useState("")
    useEffect(() => {
-        const Data = async() => {
-         let news_fetch  = await fetch(`https://gnews.io/api/v4/search?q=finance+business&lang=en&country=in&max=9&apikey=${import.meta.env.VITE_News_API_KEY_1}`);
+        const Data = async() => {         
+         let news_fetch  = await fetch(` https://newsdata.io/api/1/latest?apikey=${import.meta.env.VITE_News_API_KEY_1}&country=in&language=en,mr&category=business,top&timezone=Asia/Kolkata`);
          let news_data = await news_fetch.json()
           setData (news_data.articles); 
         }
@@ -80,16 +80,16 @@ function News (){
 
       {/* News Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-        {data.map((news) => ( news.image &&
+        {data.slice(0,9).map((news) => ( news.image_url &&
          
           <CARD
-            key={news.url}
+            key={news.link}
             title={news.title}
-            img_url={news.image}
+            img_url={news.image_url}
             description={news.description}
-            src_url={news.url}
-            onSummaryClick={() => ShowSummary(news.url)}
-            smryloading = {smryloading_url == news.url}
+            src_url={news.link}
+            onSummaryClick={() => ShowSummary(news.link)}
+            smryloading = {smryloading_url == news.link}
           />
         
         ))}
