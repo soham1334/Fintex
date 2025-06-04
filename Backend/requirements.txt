@@ -1,3 +1,10 @@
+# Web framework
+django>=4.0
+djangorestframework>=3.14
+
+# WSGI server
+gunicorn>=20.0.0
+
 # Article scraping and cleaning
 newspaper3k==0.2.8
 lxml-html-clean==0.1.1
@@ -22,7 +29,6 @@ orjson==3.10.1
 ipython==8.25.0
 notebook==7.1.3
 
-gunicorn==20.1.0
 
 
 
