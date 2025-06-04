@@ -1,0 +1,27 @@
+
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Just to be safe */
+}
+
+/* Wrapper around entire app - no bg image here */
+.webpage {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display:flex;
+  flex-direction: column;
+}
+
+/* Content should appear above overlay */
+.main {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

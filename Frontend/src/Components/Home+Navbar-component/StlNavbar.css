@@ -1,0 +1,101 @@
+.navbar {
+    background: linear-gradient(145deg, #1c7eae, #070741);
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.4),
+        -3px -3px 8px rgba(100, 100, 255, 0.1);
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    box-sizing: border-box;
+    border: 1px solid rgba(120, 5, 5, 0.1);
+    position: relative;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logout to far right */
+  align-items: center;
+}
+
+.navbar:hover {
+  box-shadow: 
+    7px 7px 20px rgba(0, 0, 0, 0.6),
+    -5px -5px 15px rgba(80, 130, 255, 0.3);
+  border: 1px solid rgba(39, 79, 139, 0.3);
+  
+}
+
+.logout-container {
+  margin-left: auto; /* ensures it's pushed as far right as possible */
+}
+
+/* Custom styling for logout link */
+.logout-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Red background and white text on hover */
+.logout-link:hover {
+  color: white;
+  background-color: #ff3b3b;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Nav items styling */
+.nav-obj {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* PRESERVED WHITE BOX ON HOVER */
+.nav-link:hover {
+    color: #000000; /* Black text for contrast */
+    background: white; /* Solid white box */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Keep the white underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
