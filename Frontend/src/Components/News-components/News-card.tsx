@@ -1,9 +1,3 @@
-import { useContext, useState } from "react";
-
-
-
-
-
 
 type prop = {
   title: string;

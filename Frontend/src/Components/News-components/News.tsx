@@ -1,4 +1,4 @@
-import { useEffect, useState,createContext } from "react"
+import { useEffect, useState} from "react"
 import  CARD  from './News-card' 
 import Summarycard from './summarycard'
 import axios from 'axios'

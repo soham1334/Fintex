@@ -1,14 +1,14 @@
 
 import {Routes ,Route} from 'react-router-dom'
 import Home from './Components/Home+Navbar-component/home'
-import Navbar from './Components/Home+Navbar-component/Navbar'
+
 import News from './Components/News-components/News'
 import StockPage from './Components/Test'
 import './index.css'
 import './App.css'
 import Login from './Components/logindashboard-component/Login'
 // import { useContext, useState } from 'react'
-import AuthContext_Provider,{AuthContext} from './Components/logindashboard-component/Auth-Context'
+import AuthContext_Provider from './Components/logindashboard-component/Auth-Context'
 import LoginDashboard from './Components/logindashboard-component/login_dashboard'
 import Registration from './Components/logindashboard-component/Register'
 import PrivatRoute from './Components/logindashboard-component/PrivateRoute'

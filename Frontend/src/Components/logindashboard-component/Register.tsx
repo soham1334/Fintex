@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+
 import axios from 'axios'
 
 type FormError = {
@@ -30,7 +30,7 @@ function Registration (){
         const response = await axios.post("http://127.0.0.1:8000/API/v2/Register/",details)
         console.log("Resgistered Successfully!",response.data)
         setregister(true)
-      }catch(error){
+      }catch(error:any){
         const Error = error.response.data as FormError;
         console.error("TRY AGAIN",Error)
         seterror({'username':Error.username,'password':Error.password})

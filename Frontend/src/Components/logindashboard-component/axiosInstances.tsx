@@ -1,4 +1,4 @@
-import React from 'react'
+
 import axios from 'axios'
 
 const baseURL = import.meta.env.VITE_BACKEND_API_KEY

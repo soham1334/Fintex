@@ -2,7 +2,7 @@ import './StlHome.css'
 import '../../App.css'
 import Navbar from './Navbar.tsx'
 import { useEffect } from 'react'
-import axios from 'axios'
+
 import axiosInstance from '../logindashboard-component/axiosInstances.tsx'
 
 function Home ()  {
@@ -14,7 +14,7 @@ function Home ()  {
 
                 const response = await axiosInstance.get("/protected-view/")
                 console.log(response.data)
-            }catch(error){
+            }catch(error : any){
                 console.log(error)
                 console.error("Full error response:", error.response?.data);
 
