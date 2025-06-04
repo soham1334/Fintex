@@ -21,3 +21,6 @@ orjson==3.10.1
 # Optional: If using Jupyter Notebooks or IPython
 ipython==8.25.0
 notebook==7.1.3
+
+pip install gunicorn
+
