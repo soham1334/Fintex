@@ -19,7 +19,7 @@ const Login = () => {
         const details = {username ,password}
 
         try{
-            const response = await axios.post("http://127.0.0.1:8000/API/v2/token/",details)
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_KEY}/token/`,details)
             localStorage.setItem('accessToken',response.data.access)
             localStorage.setItem('refreshToken',response.data.refresh)
             setIslogedin(true)
