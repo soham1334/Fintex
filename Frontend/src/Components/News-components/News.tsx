@@ -25,7 +25,7 @@ function News (){
         const Data = async() => {         
          let news_fetch  = await fetch(` https://newsdata.io/api/1/latest?apikey=${import.meta.env.VITE_News_API_KEY_1}&country=in&language=en,mr&category=business,top&timezone=Asia/Kolkata`);
          let news_data = await news_fetch.json()
-          setData (news_data.articles); 
+          setData (news_data.results); 
         }
         Data(); 
     },[])
