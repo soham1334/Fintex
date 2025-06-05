@@ -128,7 +128,15 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ## 📸 Screenshots
 
-*Coming soon – Add screenshots of your UI and chatbot here!*
+
+![Screenshot 2025-06-05 115205](https://github.com/user-attachments/assets/58efb612-0c66-41b9-879d-af920574d5ce)
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/8ba12465-4853-409d-a632-febe6321b4d3" />
+
+![Screenshot 2025-06-05 115247](https://github.com/user-attachments/assets/bd199f24-dc12-4700-a46f-df0114fc9082)
+
+
+
 
 ---
 
