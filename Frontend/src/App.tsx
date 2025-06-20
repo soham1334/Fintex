@@ -3,7 +3,7 @@ import {Routes ,Route} from 'react-router-dom'
 import Home from './Components/Home+Navbar-component/home'
 
 import News from './Components/News-components/News'
-import StockPage from './Components/Test'
+import YFinanceDashboard from './Components/Stock/stock'
 import './index.css'
 import './App.css'
 import Login from './Components/logindashboard-component/Login'
@@ -29,7 +29,7 @@ function App() {
                   <Route path = "/login" element = {<Login/>}/> 
                   <Route path = "/Home" element = {<PrivatRoute><Home/></PrivatRoute>} />
                   <Route path = "/News" element = {<PrivatRoute><News/></PrivatRoute>} />
-                  <Route path = "/StockMarket" element = {<PrivatRoute><StockPage/></PrivatRoute>}/>
+                  <Route path = "/StockMarket" element = {<PrivatRoute><YFinanceDashboard/></PrivatRoute>}/>
                 </Routes>
               </main> 
       </AuthContext_Provider>  

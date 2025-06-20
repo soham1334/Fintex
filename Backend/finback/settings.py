@@ -84,8 +84,15 @@ TEMPLATES = [
         },
     },
 ]
+
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
 CORS_ALLOW_ALL_ORIGINS = DEBUG # Allow all origins only in debug mode
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:5173" 
+]
 
 WSGI_APPLICATION = 'finback.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True

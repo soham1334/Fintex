@@ -22,6 +22,8 @@ urlpatterns = [
    path('API/v2/',include('Newssmry.urls')) ,
     
     path('API/v2/',include('RegisterApi.urls')) ,
+
+    path('API/v2/',include('stock.urls')),
    
     path('admin/', admin.site.urls),
 ]

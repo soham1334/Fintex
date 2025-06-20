@@ -24,6 +24,8 @@ function CARD({ title, img_url, description, src_url, onSummaryClick,smryloading
         <div className="flex justify-evenly items-center gap-2 pt-4">
           <a
             href={src_url}
+             target="_blank"
+             rel="noopener noreferrer"
             className="text-center text-red-600 border border-red-600 text-sm font-medium px-3 py-2 rounded w-[100px] transition duration-200 hover:bg-red-600 hover:text-white hover:scale-105"
           >
             Read More
