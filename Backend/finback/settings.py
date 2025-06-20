@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'Newssmry',
-    'RegisterApi'
+    'RegisterApi',
+    'stock',
 
 ]
 
@@ -91,7 +92,8 @@ CORS_ALLOW_ALL_ORIGINS = DEBUG # Allow all origins only in debug mode
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://localhost:5173" 
+    "http://localhost:5173",
+    "https://fintex-eight.vercel.app",
 ]
 
 WSGI_APPLICATION = 'finback.wsgi.application'
