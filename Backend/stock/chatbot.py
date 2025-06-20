@@ -149,7 +149,7 @@ comparison_tool = Tool(
 )
 
 # 5. Setup LLM and Prompt
-llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-pro", google_api_key="AIzaSyAPWigmGbmoJfwxizaPfn_LA8nAHOM8oVk") # Replace with your actual API key
+llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-pro", google_api_key=os.environ["GOOGLE_API_KEY"]) # Replace with your actual API key
 
 # Removed the 'extract_company_names' function and tool, as it's better handled
 # by the LLM's natural reasoning within the agent executor.
