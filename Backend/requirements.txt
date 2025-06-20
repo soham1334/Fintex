@@ -19,7 +19,7 @@ langchain-google-genai==1.0.2
 
 
 # For document parsing and handling
-beautifulsoup4==4.12.3
+
 requests==2.31.0
 
 # Google Generative AI (Gemini)
