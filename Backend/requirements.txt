@@ -8,7 +8,7 @@ gunicorn>=20.1.0
 djangorestframework-simplejwt>=5.3.1
 
 # CORS support
-django-cors-headers>=4.3.
+django-cors-headers==4.7.0 # Corrected line
 
 # Article scraping and cleaning
 newspaper3k==0.2.8
