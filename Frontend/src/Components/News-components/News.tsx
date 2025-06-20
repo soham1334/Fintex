@@ -29,7 +29,7 @@ function News (){
           setData (news_data.results); 
 
          console.log("News API called")
-          setData (news_data.articles); 
+          //setData (news_data.articles); 
  
         }
         Data(); 

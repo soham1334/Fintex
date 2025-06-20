@@ -1,7 +1,7 @@
 import { useEffect, useState ,useContext} from "react";
 import {CompanyNameContext,SearchClick} from './stock'
 import axios from 'axios'
-import { List } from "lucide-react";
+
 import { ArrowUpRight, ArrowDownRight, TrendingUp, TrendingDown } from 'lucide-react';
 
 

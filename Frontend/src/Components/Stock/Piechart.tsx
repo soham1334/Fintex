@@ -73,7 +73,7 @@ function HoldingsPieChart({ data }: Props) {
         <Tooltip
           formatter={(value: number,name:string, props: any) => {
             if (!props || !props.payload || typeof props.payload.period === 'undefined') {
-              return [`${(value * 100).toFixed(2)}%`, ''];
+              return [`${(value * 100).toFixed(2)}%`, name];
             }
             return [`${(value * 100).toFixed(2)}%`, props.payload.period];
           }}
