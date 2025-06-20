@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+
 CORS_ALLOW_ALL_ORIGINS = DEBUG # Allow all origins only in debug mode
 
 
@@ -96,12 +96,20 @@ CORS_ALLOWED_ORIGINS = [
     "https://fintex-eight.vercel.app",
 ]
 
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'content-type',
+    'authorization',
+]
+
 WSGI_APPLICATION = 'finback.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = False
 
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = not DEBUG
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
