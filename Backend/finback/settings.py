@@ -14,7 +14,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() == 'true'
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 if 'fintex-gtct.onrender.com' not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append('fintex-gtct.onrender.com')
-    
+if 'fintex-ypoq.onrender.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('fintex-ypoq.onrender.com')  # ✅ ensure backend host is allowed
 if 'localhost' not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append('localhost')
 if '127.0.0.1' not in ALLOWED_HOSTS:
@@ -36,8 +37,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # ✅ must be at the top
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,12 +70,24 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
     "https://fintex-gtct.onrender.com",
-     "https://fintex-eight.vercel.app",
+    "https://fintex-eight.vercel.app",  # ✅ Vercel frontend
 ]
+
 CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'content-type',
     'authorization',
+]
+
+# ✅ Optional: Allow all methods (GET, POST, etc.)
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
 ]
 
 SESSION_COOKIE_SAMESITE = 'None'
