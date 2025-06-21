@@ -2,7 +2,7 @@
 
 **FinText** is a modern AI-powered web application that delivers simplified financial insights to users. It combines live market data, real-time news summarization, and conversational AI to help users better understand the stock market and company fundamentals.
 
-🌐 **Live Demo:** [https://fintex-81029.vercel.app/](https://fintex-81029.vercel.app/)
+🌐 **Live Demo:** [https://fintex-eight.vercel.app/](https://fintex-eight.vercel.app/)
 
 ---
 
