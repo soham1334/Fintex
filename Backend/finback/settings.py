@@ -12,14 +12,13 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-nira-q!h$qn#a_
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
-if 'fintex-ypoq.onrender.com' not in ALLOWED_HOSTS:
-    ALLOWED_HOSTS.append('fintex-ypoq.onrender.com')
+if 'fintex-gtct.onrender.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('fintex-gtct.onrender.com')
 if 'localhost' not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append('localhost')
 if '127.0.0.1' not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append('127.0.0.1')
 
-# === Installed apps ===
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,20 +26,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-
     'Newssmry',
     'RegisterApi',
     'stock',
 ]
 
-# === Middleware ===
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # must be high
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,7 +64,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'finback.wsgi.application'
 
-# === CORS Settings ===
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
@@ -80,11 +75,9 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'authorization',
 ]
 
-# === Session cookie settings ===
 SESSION_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SECURE = not DEBUG  # True in production for HTTPS
+SESSION_COOKIE_SECURE = not DEBUG
 
-# === Database ===
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -92,7 +85,6 @@ DATABASES = {
     }
 }
 
-# === Password validation ===
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -100,17 +92,14 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# === Internationalization ===
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# === Static files ===
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# === Caching (optional) ===
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -118,7 +107,6 @@ CACHES = {
     }
 }
 
-# === DRF & JWT Settings ===
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
