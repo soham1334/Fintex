@@ -135,6 +135,14 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ![Screenshot 2025-06-05 115247](https://github.com/user-attachments/assets/bd199f24-dc12-4700-a46f-df0114fc9082)
 
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/76f8c942-49ac-4342-b226-3020a85ceed8" />
+
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/2b6c24ac-cbde-40f9-a11d-757fcd2a99bb" />
+
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/2dc49c10-d635-4113-aecf-d21ec370b9f4" />
+
+
+
 
 
 
