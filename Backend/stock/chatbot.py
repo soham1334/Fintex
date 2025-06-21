@@ -8,9 +8,10 @@ from langchain.prompts import PromptTemplate
 import yfinance as yf
 from langchain.memory import ConversationBufferMemory
 import re
+import os
 from typing import TypedDict
 from .company_name_symbol import symbol_map
-
+load_dotenv()
 # 1. Static Symbol Map for Fast Resolution
 
 
