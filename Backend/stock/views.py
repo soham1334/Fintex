@@ -42,6 +42,6 @@ class Chatbot (APIView):
         print("QUERY POST REQUEST RECEIVED")
         response = request.data.get('query')
         print(response)
-        ans = Query(response)[0]
+        ans = Query(response)
         print(ans)
         return Response({"RESPONSE":ans})     
