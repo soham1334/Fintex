@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'finback.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://fintex-eight.vercel.app",
+    "https://fintex-gtct.onrender.com",
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = list(default_headers) + [
