@@ -11,6 +11,7 @@ import re
 import os
 from typing import TypedDict
 from .company_name_symbol import symbol_map
+from dotenv import load_dotenv
 load_dotenv()
 # 1. Static Symbol Map for Fast Resolution
 
