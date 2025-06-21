@@ -21,7 +21,7 @@ from django.urls import path,include
 urlpatterns = [
    path('API/v2/',include('Newssmry.urls')) ,
     
-    path('API/v2/auth',include('RegisterApi.urls')) ,
+    path('API/v2/auth/',include('RegisterApi.urls')) ,
 
     path('API/v2/',include('stock.urls')),
    
