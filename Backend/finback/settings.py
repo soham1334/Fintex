@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nira-q!h$qn#a_ob40)&1ga!%$xaai%zk3ob)n7&feor39p6jj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fintex-5jh9.onrender.com']]
+ALLOWED_HOSTS = ['fintex-5jh9.onrender.com']
 
 # Application definition
 
