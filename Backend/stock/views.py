@@ -36,12 +36,22 @@ class Performance (APIView):
         print("PERFORMANCE:",response)
         return Response(response)    
 
-class Chatbot (APIView):
+class Chatbot(APIView):
     
-    def post(self,request):
+    def post(self, request):
         print("QUERY POST REQUEST RECEIVED")
+        
+        # Ensure session exists or create one
+        if not request.session.session_key:
+            request.session.create()
+        session_id = request.session.session_key
+        
         response = request.data.get('query')
-        print(response)
-        ans = Query(response)
-        print(ans)
-        return Response({"RESPONSE":ans})     
+        print(f"User query: {response}, session_id: {session_id}")
+        
+        # Pass session_id to Query for per-session memory isolation
+        ans = Query(response, session_id=session_id)
+        
+        print(f"Agent answer: {ans}")
+        return Response({"RESPONSE": ans})
+
