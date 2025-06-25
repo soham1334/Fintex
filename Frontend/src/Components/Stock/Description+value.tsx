@@ -62,6 +62,7 @@ function DescriptionValue({ Sector, Industry, Website, Description }: discriptio
       fetchPerformance();
     } else  {
       toast.error("Slow down! Please wait before refreshing again.");
+      console.log("Slow down! Please wait before refreshing again.");
     }
 
   }, [company, searchclick]);
