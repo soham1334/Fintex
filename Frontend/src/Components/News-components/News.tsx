@@ -29,6 +29,7 @@ function News() {
         console.log("News API called");
       } catch (error) {
         toast.error("Failed to load news. Try again later.");
+        console.log("Failed to load news. Try again later.");
       }
     };
 
