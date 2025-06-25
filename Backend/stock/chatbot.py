@@ -208,13 +208,18 @@ graph.set_entry_point("agent")
 compiled_graph = graph.compile()
 
 # Global memory across chats
-graph_memory: dict = {"chat_history": []}
+# Store memory per session_id
+session_memory_store: dict[str, dict] = {}
 
-def Query(query: str) -> str:
-    print("ENTERED IN FUNCTION")
+def Query(query: str, session_id: str) -> str:
+    print("ENTERED IN FUNCTION with session_id:", session_id)
+
+    # Get memory for this session or default
+    memory = session_memory_store.get(session_id, {"chat_history": []})
+
     inputs = {
         "input": query,
-        "memory": graph_memory
+        "memory": memory
     }
 
     output = None
@@ -225,10 +230,13 @@ def Query(query: str) -> str:
     except Exception as e:
         output = f"Error during execution: {str(e)}"
 
-    graph_memory.update(inputs["memory"])
+    # Update session memory store with latest memory
+    session_memory_store[session_id] = inputs["memory"]
+
     return output or "No output generated."
 
-def ResetMemory():
-    global graph_memory
-    graph_memory = {"chat_history": []}
-    return "Memory cleared."
+
+def ResetMemory(session_id: str) -> str:
+    session_memory_store[session_id] = {"chat_history": []}
+    return f"Memory cleared for session {session_id}."
+
