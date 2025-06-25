@@ -6,12 +6,13 @@ from langchain_core.tools import Tool
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
-from typing import TypedDict
-from dotenv import load_dotenv
 import re
 import os
+from typing import TypedDict
+from dotenv import load_dotenv
 from .company_name_symbol import symbol_map
 
+# 1. Static Symbol Map for Fast Resolution
 load_dotenv()
 
 # Tool 1: DuckDuckGo Symbol Resolver

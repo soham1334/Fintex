@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import axios from 'axios'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 function ChatBot() {
@@ -9,43 +11,53 @@ function ChatBot() {
   const [input, setInput] = useState("");
   const [send , setSend] = useState(true)
 
-  const handleSend = () => {
-  setSend(false)  
-  console.log("SEND CLICKED");
+  const MAX_CALLS = 8;
+const WINDOW_MS = 3 * 60 * 60 * 1000; // 3 hours in ms
+const STORAGE_KEY = "chatbot_api_calls";
+
+const handleSend = () => {
   if (!input.trim()) return;
 
-  // Add user's message
+  // Check API call limits
+  let calls: number[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+  const now = Date.now();
+  // Filter out calls older than 3 hours
+  calls = calls.filter(ts => now - ts < WINDOW_MS);
+
+  if (calls.length >= MAX_CALLS) {
+    toast.error("Chat limit reached. Please try again after some time.");
+    return;
+  }
+
+  // Add current call timestamp
+  calls.push(now);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(calls));
+
+  setSend(false);
   setMessages(prev => [...prev, input]);
 
   const chatbot = async () => {
-    console.log("ENTERED IN CHATBOT FUNC");
-
-    const query = { query: input };
-
     try {
-      const response = await axios.post(`${import.meta.env.VITE_CHATBOT_API}`, query);
-
+      const response = await axios.post(`${import.meta.env.VITE_CHATBOT_API}`, { query: input });
       const botReply = response.data.RESPONSE;
-      console.log("Bot:", botReply);
-
-      // Add bot's reply
       setMessages(prev => [...prev, botReply]);
     } catch (err) {
       alert("QUERY REQUEST FAILED");
-    }finally{
-      setSend(true)
+    } finally {
+      setSend(true);
     }
   };
 
   chatbot();
-
-  // Clear input box
   setInput("");
 };
 
 
+
   return (
     <>
+    <ToastContainer/>
       {/* Chat Popup Window */}
       {open && (
         <div className="fixed bottom-5 right-8 w-110 h-150 bg-white shadow-xl rounded-lg z-50 border border-gray-300">
