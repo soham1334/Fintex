@@ -2,8 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { CompanyNameContext, SearchClick } from './stock';
 import axios from 'axios';
 import { ArrowUpRight, ArrowDownRight, TrendingUp, TrendingDown } from 'lucide-react';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 type discription = {
   Sector: string;
@@ -61,7 +60,7 @@ function DescriptionValue({ Sector, Industry, Website, Description }: discriptio
     if (!alreadyFetchedThisSession && (now - lastCalled >= 5000 || !cachedData)) {
       fetchPerformance();
     } else  {
-      toast.error("Slow down! Please wait before refreshing again.");
+      alert("Slow down! Please wait before refreshing again.");
       console.log("Slow down! Please wait before refreshing again.");
     }
 
@@ -69,7 +68,7 @@ function DescriptionValue({ Sector, Industry, Website, Description }: discriptio
 
   return (
     <>
-      <ToastContainer />
+     
       <div className="flex px-12 mb-8">
         <div className="flex gap-12 w-full">
           <div className="bg-white border rounded-2xl p-6 text-gray-800 text-base leading-relaxed shadow-md w-full max-w-3xl space-y-4">
