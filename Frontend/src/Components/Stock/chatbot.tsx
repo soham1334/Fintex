@@ -27,6 +27,7 @@ const handleSend = () => {
 
   if (calls.length >= MAX_CALLS) {
     toast.error("Chat limit reached. Please try again after some time.");
+    console.log("Chat limit reached. Please try again after some time.");
     return;
   }
 
